@@ -8,7 +8,7 @@ public class AreaComum {
     private Integer capacidade;
     private boolean disponivel;
 
-    private List<Integer> Reserva = new ArrayList<>();
+    private List<Residente> reservas = new ArrayList<>();
     private List<PedidoDeManutencao> historicoManutencao = new ArrayList<>();
 
     AreaComum(int id, String nome, String descricao, Integer capacidade, boolean disponivel){
@@ -51,7 +51,7 @@ public class AreaComum {
         this.capacidade = capacidade;
     }
 
-    public boolean isDisponivel() {
+    public boolean EstaDisponivel() {
         return disponivel;
     }
 
@@ -59,12 +59,12 @@ public class AreaComum {
         this.disponivel = disponivel;
     }
 
-    public List<Integer> getReservation() {
-        return Reserva;
+    public List<Residente> getReservas() {
+        return reservas;
     }
 
-    public void setReservation(List<Integer> reservation) {
-        Reserva = reservation;
+    public void setReservas(List<Residente> reservas) {
+        this.reservas = reservas;
     }
 
     public List<PedidoDeManutencao> getHistoricoManutencao() {
