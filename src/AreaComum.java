@@ -3,15 +3,15 @@ import java.util.List;
 
 public class AreaComum {
 
-    private Long id;
+    private int id;
     private String nome, descricao;
     private Integer capacidade;
     private boolean disponivel;
 
-    private List<Integer> Reservation = new ArrayList<>();
-    private List<MaintenanceRequest> historicoManutencao = new ArrayList<>();
+    private List<Integer> Reserva = new ArrayList<>();
+    private List<PedidoDeManutencao> historicoManutencao = new ArrayList<>();
 
-    AreaComum(Long id, String nome, String descricao, Integer capacidade, boolean disponivel){
+    AreaComum(int id, String nome, String descricao, Integer capacidade, boolean disponivel){
         this.id = id;
         this.nome=nome;
         this.descricao=descricao;
@@ -19,11 +19,11 @@ public class AreaComum {
         this.disponivel=disponivel;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -60,18 +60,18 @@ public class AreaComum {
     }
 
     public List<Integer> getReservation() {
-        return Reservation;
+        return Reserva;
     }
 
     public void setReservation(List<Integer> reservation) {
-        Reservation = reservation;
+        Reserva = reservation;
     }
 
-    public List<MaintenanceRequest> getHistoricoManutencao() {
+    public List<PedidoDeManutencao> getHistoricoManutencao() {
         return historicoManutencao;
     }
 
-    public void setHistoricoManutencao(List<MaintenanceRequest> historicoManutencao) {
+    public void setHistoricoManutencao(List<PedidoDeManutencao> historicoManutencao) {
         this.historicoManutencao = historicoManutencao;
     }
 }
