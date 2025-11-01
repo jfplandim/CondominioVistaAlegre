@@ -1,6 +1,7 @@
 import java.util.List;
 import java.time.LocalDateTime;
 public class Residente {
+    private int id;
     private String nome;
     private int telefone;
     private String email;
