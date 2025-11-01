@@ -10,6 +10,9 @@ public class Residente {
     private List<vagaGaragem> vagaGaragens;
     private List<Visitante> visitantesAutorizados;
 
+    public Residente(int id, String nome) {
+    }
+
     public void login(){
         System.out.println("Morador fazendo login...");
     }
