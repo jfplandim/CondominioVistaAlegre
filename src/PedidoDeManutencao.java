@@ -23,12 +23,14 @@ public class PedidoDeManutencao {
         this.status="Fechado"; // altera o estado do pedido
     }
 
-    PedidoDeManutencao(String tecnico, int id, AreaComum area, Residente solicitante, String descricao){
-        this.tecnico=tecnico;
+    PedidoDeManutencao(int id, AreaComum area, Residente solicitante, String descricao){
         this.id=id;
         this.area=area;
         this.solicitante=solicitante;
         this.descricao=descricao;
+        this.abertura=LocalDateTime.now();
+        this.status= "Aberto";
+        this.tecnico=null;
     }
 
     public String getTecnico() {
