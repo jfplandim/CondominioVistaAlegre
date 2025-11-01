@@ -21,8 +21,6 @@ public class Apartamento {
         this.saldoCondominio = saldoCondominio;
     }
 
-
-
     public String getNumero() {
         return numero;
     }
