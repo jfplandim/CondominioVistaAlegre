@@ -6,8 +6,8 @@ public class Visitante extends Residente{
     private LocalDateTime saida;
 
     //construtor
-    public Visitante(String email, int id, String nome, String documento, LocalDateTime entrada, LocalDateTime saida){
-        super(id, nome, email);
+    public Visitante(int id, String nome, String documento, LocalDateTime entrada, LocalDateTime saida){
+        super(id, nome);
         this.documento = documento;
         this.entrada = entrada;
         this.saida = saida;

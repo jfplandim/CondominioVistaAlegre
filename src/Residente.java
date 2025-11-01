@@ -10,7 +10,11 @@ public class Residente {
     private List<vagaGaragem> vagaGaragens;
     private List<Visitante> visitantesAutorizados;
 
-    public Residente(int id, String nome, String email) {
+    public Residente(int id, String nome,int telefone, String email,) {
+        this.id = id;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
     }
 
     public void login(){
