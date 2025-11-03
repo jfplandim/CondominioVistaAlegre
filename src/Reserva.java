@@ -9,31 +9,28 @@ public class Reserva {
   private LocalDateTime fim;
   private LocalDateTime createdAT;
   private Double valor;
-  private String Status;
+  statusReserva status;
   private Residente morador;
-
-    private static final String pendente = "pendente";
-    private static final String confirmado = "confirmado";
-    private static final String cancelado=  "cancelado";
-
-    public Reserva(int id, AreaComum area, LocalDateTime inicio, LocalDateTime fim, LocalDateTime createdAT, Double valor) {
+  private politicaReserva politica;
+    public Reserva(int id, AreaComum area, LocalDateTime inicio, LocalDateTime fim, LocalDateTime createdAT, Double valor,Residente morador,statusReserva status) {
         this.id = id;
         this.area = area;
         this.inicio = inicio;
         this.fim = fim;
         this.createdAT = createdAT;
         this.valor = valor;
-        this.Status=pendente;
+        this.morador=morador;
+        this.status=statusReserva.confirmado;
     }
 
     public boolean confirmarReserva() {
         if (this.inicio.isBefore(LocalDateTime.now())) {
             System.out.println("nao foi possivel fazer a reserva no dia"+getInicio());
-            this.Status=cancelado;
+            this.status=statusReserva.cancelado;
             return false;
         }
-        if (this.Status.equals(pendente)) {
-            this.Status = confirmado;
+        if (this.status.equals(statusReserva.pendente)) {
+            this.status = statusReserva.confirmado;
             System.out.println("sua reserva foi marcada");
             return true;
         }
@@ -41,12 +38,12 @@ public class Reserva {
     }
 
     public boolean cancelar(){
-        if(this.Status.equals(pendente)||this.Status.equals(confirmado)){
-            this.Status=cancelado;
+        if(this.status.equals(statusReserva.pendente)||this.status.equals(statusReserva.confirmado)){
+            this.status=statusReserva.cancelado;
             System.out.println("Sua reserva foi cancelada");
             return true;
         }
-        if(this.Status==null){
+        if(this.status==null){
             System.out.println("A reserva nao existe");
         }
         return false;
@@ -100,11 +97,19 @@ public class Reserva {
         this.valor = valor;
     }
 
-    public String getStatus() {
-        return Status;
+    public statusReserva getStatus() {
+        return status;
     }
 
-    public void setStatus(String status) {
-        Status = status;
+    public void statusReserva (String status) {
+        status = status;
+    }
+
+    //classe enum para definir o status da reserva
+    public enum  statusReserva{
+        pendente,
+        confirmado,
+        cancelado
+
     }
 }
